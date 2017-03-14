@@ -8,7 +8,7 @@ namespace CarDealer.Data
     public class CarDealerContext : DbContext
     {
         public CarDealerContext()
-            : base("name=CarDealerContext")
+            : base("CarDealerContext")
         {
             //this.Configuration.LazyLoadingEnabled = false;
             //this.Configuration.ProxyCreationEnabled = false;

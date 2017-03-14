@@ -35,14 +35,6 @@ namespace CarDealer.Services
                 throw new ArgumentException("The argument you have given for the order is invalid!");
             }
 
-            Mapper.Initialize(cfg =>
-            {
-                cfg.CreateMap<Supplier, FilterSuppliersViewModel>()
-                    .ForMember(vm => vm.PartsCount,
-                        cfgExpression => cfgExpression
-                            .MapFrom(supplier => supplier.Parts.Count));
-            });
-
             IEnumerable<FilterSuppliersViewModel> viewModels =
                 Mapper.Instance.Map<IEnumerable<Supplier>, IEnumerable<FilterSuppliersViewModel>>(suppliers);
 

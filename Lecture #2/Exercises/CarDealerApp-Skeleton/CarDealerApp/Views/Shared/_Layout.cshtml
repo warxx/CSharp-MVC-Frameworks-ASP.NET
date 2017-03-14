@@ -20,9 +20,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("All", "All")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    @*@<li>@Html.ActionLink("Cars")</li>*@
+                    <li>
+                        <a href="/customers/all/ascending">Customers</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            Sale
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/sales">All</a></li>
+                            <li><a href="/sales/discounted">Discounted</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/cars/all">Cars</a></li>
                 </ul>
             </div>
         </div>

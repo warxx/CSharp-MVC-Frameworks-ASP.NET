@@ -4,6 +4,7 @@ using System.Linq;
 using AutoMapper;
 using CarDealer.Data;
 using CarDealer.Models;
+using CarDealer.Models.BindingModels;
 using CarDealer.Models.ViewModels;
 
 namespace CarDealer.Services
@@ -34,11 +35,6 @@ namespace CarDealer.Services
                 throw new ArgumentException("The argument you have given for the order is invalid!");
             }
 
-
-            Mapper.Initialize(cfg =>
-            {
-                cfg.CreateMap<Customer, AllCustomersViewModel>();
-            });
             IEnumerable<AllCustomersViewModel> viewModels =
                 Mapper.Instance.Map<IEnumerable<Customer>, IEnumerable<AllCustomersViewModel>>(customers);
 
@@ -57,6 +53,26 @@ namespace CarDealer.Services
             };
 
             return viewModel;
+        }
+
+        public void AddCustomerBm(AddCustomerBm model)
+        {
+            var customer = Mapper.Instance.Map<AddCustomerBm, Customer>(model);
+            customer.IsYoungDriver = false;
+
+
+            if (DateTime.Now.Year - model.BirthDate.Year < 21)
+                customer.IsYoungDriver = true;
+
+            this.context.Customers.Add(customer);
+            this.context.SaveChanges();
+        }
+
+        public EditCustomerViewModel GetEditCustomerVm(int id)
+        {
+            var customer = this.context.Customers.Find(id);
+
+            return Mapper.Map<Customer, EditCustomerViewModel>(customer);
         }
     }
 }

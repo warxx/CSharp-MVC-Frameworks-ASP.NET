@@ -116,6 +116,30 @@ namespace CarDealerApp
                     action = "Percent"
                 }
             );
+
+            routes.MapRoute(
+                name: "Add Customers",
+                url: "customers/add",
+                defaults: new
+                {
+                    controller = "Customers",
+                    action = "Add"
+                }
+            );
+
+            routes.MapRoute(
+                name: "Edit Customers",
+                url: "customers/edit/{id}",
+                defaults: new
+                {
+                    controller = "Customers",
+                    action = "Edit"
+                },
+                constraints: new
+                {
+                    id = @"\d+"
+                }
+            );
         }
     }
 }

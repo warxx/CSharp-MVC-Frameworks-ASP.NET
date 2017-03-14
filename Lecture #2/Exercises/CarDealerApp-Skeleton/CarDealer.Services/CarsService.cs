@@ -18,12 +18,17 @@ namespace CarDealer.Services
 
         public IEnumerable<CarsMakeViewModel> GetCarsByMake(string make)
         {
-            IEnumerable<Car> cars = this.context.Cars.Where(car => car.Make == make);
+            make = make.ToLower();
+            IEnumerable<Car> cars;
 
-            Mapper.Initialize(cfg =>
+            if (make == "all")
             {
-                cfg.CreateMap<Car, CarsMakeViewModel>();
-            });
+                cars = this.context.Cars.ToList();
+            }
+            else
+            {
+                cars = this.context.Cars.Where(car => car.Make == make);
+            }
 
             IEnumerable<CarsMakeViewModel> viewModels =
                 Mapper.Instance.Map<IEnumerable<Car>, IEnumerable<CarsMakeViewModel>>(cars);
