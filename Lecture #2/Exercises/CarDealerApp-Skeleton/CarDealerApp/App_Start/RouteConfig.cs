@@ -9,6 +9,8 @@ namespace CarDealerApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
             routes.MapRoute(
                 name: "Ordered Customers",
                 url: "customers/all/{order}",
