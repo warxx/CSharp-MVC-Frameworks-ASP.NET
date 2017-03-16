@@ -60,17 +60,5 @@ namespace CarDealerApp.Controllers
 
             return this.View(viewModel);
         }
-
-        [HttpPost]
-        public ActionResult Edit([Bind(Include = "Id, Name, BirthDate")] EditCustomerBm model)
-        {
-            if (this.ModelState.IsValid)
-            {
-                this.service.EditCustomer(model);
-                return this.RedirectToAction("All", new { order = "ascending" });
-            }
-
-            return this.View(this.service.GetEditCustomerVm(model.Id));
-        }
     }
 }

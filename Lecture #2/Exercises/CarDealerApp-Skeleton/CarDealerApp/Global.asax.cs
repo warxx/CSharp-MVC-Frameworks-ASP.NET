@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -52,11 +51,6 @@ namespace CarDealerApp
                             .MapFrom(supplier => supplier.Parts.Count));
                 cfg.CreateMap<AddCustomerBm, Customer>();
                 cfg.CreateMap<Customer, EditCustomerViewModel>();
-                cfg.CreateMap<EditCustomerBm, Customer>();
-                cfg.CreateMap<Part, PartViewModel>()
-                    .ForMember(vm => vm.SupplierName,
-                        cfgExpression => cfgExpression
-                            .MapFrom(name => name.Supplier.Name));
             });
         }
     }
