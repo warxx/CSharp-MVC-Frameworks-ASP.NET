@@ -72,7 +72,26 @@ namespace CarDealer.Services
         {
             var customer = this.context.Customers.Find(id);
 
+            if (customer == null)
+            {
+                throw new ArgumentException("Cannot find customer with such id!");
+            }
+
             return Mapper.Map<Customer, EditCustomerViewModel>(customer);
+        }
+
+        public void EditCustomer(EditCustomerBm model)
+        {
+            var customer = this.context.Customers.Find(model.Id);
+
+            if (customer == null)
+            {
+                throw new ArgumentException("Cannot find customer with such id!");
+            }
+
+            customer.Name = model.Name;
+            customer.BirthDate = model.BirthDate;
+            this.context.SaveChanges();
         }
     }
 }
