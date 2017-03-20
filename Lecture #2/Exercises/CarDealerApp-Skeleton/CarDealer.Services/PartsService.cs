@@ -27,9 +27,19 @@ namespace CarDealer.Services
             return viewModels;
         }
 
+        public IEnumerable<AddPartSupplierViewModel> GetSuppliers()
+        {
+            var suppliers = this.context.Suppliers.ToList();
+
+            var viewModels = Mapper
+                .Map<IEnumerable<Supplier>, IEnumerable<AddPartSupplierViewModel>>(suppliers);
+
+            return viewModels;
+        }
+
         public void AddPartFromBm(AddPartBindingModel model)
         {
-            Supplier supplier = this.context.Suppliers.Find();
+            Supplier supplier = this.context.Suppliers.Find(model.SupplierId);
 
             var part = new Part()
             {
@@ -37,7 +47,46 @@ namespace CarDealer.Services
                 Price = model.Price,
                 Quantity = model.Quantity,
                 Supplier = supplier
+            };
+
+            if (part.Quantity <= 0)
+            {
+                part.Quantity = 1;
             }
+
+            this.context.Parts.Add(part);
+            this.context.SaveChanges();
+        }
+
+        public void DeletePart(int id)
+        {
+            var part = this.context.Parts.Find(id);
+
+            this.context.Parts.Remove(part);
+            this.context.SaveChanges();
+        }
+
+        public EditPartViewModel GetEditPartVm(int id)
+        {
+            var part = this.context.Parts.Find(id);
+
+            var viewModel = Mapper.Map<Part, EditPartViewModel>(part);
+            return viewModel;
+        }
+
+        public void EditPartFromBm(EditPartBm model)
+        {
+            var part = this.context.Parts.Find(model.Id);
+
+            part.Price = model.Price;
+            part.Quantity = model.Quantity;
+
+            if (part.Quantity <= 0)
+            {
+                part.Quantity = 1;
+            }
+
+            this.context.SaveChanges();
         }
     }
 }

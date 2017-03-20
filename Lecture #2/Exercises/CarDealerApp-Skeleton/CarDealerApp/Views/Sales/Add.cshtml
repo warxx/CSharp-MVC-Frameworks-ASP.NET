@@ -1,0 +1,50 @@
+﻿@model CarDealer.Models.ViewModels.AddSaleVm
+@{
+    ViewBag.Title = "Add sale";
+}
+
+<h2>Add Sale</h2>
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="customer" class="col-lg-1 control-label">Customer: </label>
+        <div class="col-lg-7">
+            <select class="form-control" id="customer" name="customerId">
+                @foreach (var item in @Model.Customers)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="car" class="col-sm-1 control-label">Car: </label>
+        <div class="col-sm-11">
+            <select class="form-control" id="car" name="carId">
+                @foreach (var car in @Model.Cars)
+                {
+                    <option value="@car.Id">@car.Make @car.Model</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="discount" class="col-sm-1 control-label">Discount: </label>
+        <div class="col-sm-11">
+            <select class="form-control" id="discount" name="discount">
+                @foreach (var discount in @Model.Discounts)
+                {
+                    <option value="@discount">@discount%</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3">
+            <input class="btn btn-info" type="submit" value="Submit" />
+        </div>
+    </div>
+</form>
+
+
+

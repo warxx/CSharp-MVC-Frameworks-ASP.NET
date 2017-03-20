@@ -28,6 +28,7 @@
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th></th>
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -44,6 +45,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a href="/parts/delete/@item.Id" onclick="return confirm('Are you sure you want to delete this item?'); " type="button" class="btn btn-link">Delete</a>
+            </td>
+            <td>
+                <a href="/parts/edit/@item.Id" type="button" class="btn btn-link">Edit</a>
             </td>
         </tr>
     }

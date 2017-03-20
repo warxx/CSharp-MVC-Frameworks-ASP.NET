@@ -60,6 +60,7 @@
     <Compile Include="SalesService.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="SupliersService.cs" />
+    <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarDealer.Data\CarDealer.Data.csproj">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CarDealer.Data;
 using CarDealer.Models;
+using CarDealer.Models.BindingModels;
 using CarDealer.Models.ViewModels;
 
 namespace CarDealer.Services
@@ -21,7 +22,7 @@ namespace CarDealer.Services
             make = make.ToLower();
             IEnumerable<Car> cars;
 
-            if (make == "all")
+            if (make == "all" || string.IsNullOrEmpty(make))
             {
                 cars = this.context.Cars.ToList();
             }
@@ -48,6 +49,33 @@ namespace CarDealer.Services
             };
 
             return viewModel;
+        }
+
+        public IEnumerable<AddCarPartVm> GetAddCarPartsVm()
+        {
+            IEnumerable<Part> parts = this.context.Parts.ToList();
+            var partsVm = Mapper.Map<IEnumerable<Part>, IEnumerable<AddCarPartVm>>(parts);
+
+            return partsVm;
+        }
+
+        public void AddCarFromBm(AddCarBindingModel model)
+        {
+            var car = new Car()
+            {
+                Make = model.Make,
+                Model = model.CarModel,
+                TravelledDistance = model.TravelledDistance
+            };
+
+            foreach (var partId in model.PartsId)
+            {
+                var part = this.context.Parts.Find(partId);
+                car.Parts.Add(part);
+            }
+
+            this.context.Cars.Add(car);
+            this.context.SaveChanges();
         }
     }
 }

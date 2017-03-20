@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using CarDealer.Data;
-using CarDealer.Models;
 using CarDealer.Models.BindingModels;
 using CarDealer.Services;
 
@@ -38,12 +30,56 @@ namespace CarDealerApp.Controllers
         [Route("add")]
         public ActionResult Add()
         {
-            return this.View();
+            var suppliers = this.service.GetSuppliers();
+
+            return this.View(suppliers);
         }
 
-        public ActionResult Add(AddPartBindingModel model)
+        [HttpPost]
+        [Route("add")]
+        public ActionResult Add([Bind(Include = "Name, Price, SupplierId, Quantity")] AddPartBindingModel model)
         {
-            this.service.AddPartFromBm(model);
+            
+            if (this.ModelState.IsValid)
+            {
+                this.service.AddPartFromBm(model);
+                return this.RedirectToAction("All", "Parts");
+            }
+
+            var suppliers = this.service.GetSuppliers();
+
+            return this.View(suppliers);
+        }
+
+        [HttpGet]
+        [Route("delete/{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            this.service.DeletePart(id);
+
+            return RedirectToAction("All", "Parts");
+        }
+
+        [HttpGet]
+        [Route("edit/{id:int}")]
+        public ActionResult Edit(int id)
+        {
+            var viewModel = this.service.GetEditPartVm(id);
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [Route("edit/{id:int}")]
+        public ActionResult Edit([Bind(Include = "Id, Price, Quantity")] EditPartBm model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                this.service.EditPartFromBm(model);
+                return this.RedirectToAction("All", "Parts");
+            }
+
+            return this.View(this.service.GetEditPartVm(model.Id));
         }
     }
 }

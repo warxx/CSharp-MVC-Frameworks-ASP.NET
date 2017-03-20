@@ -27,6 +27,16 @@ namespace CarDealerApp
             );
 
             routes.MapRoute(
+                name: "Add Car",
+                url: "cars/add",
+                defaults: new
+                {
+                    controller = "Cars",
+                    action = "Add"
+                }
+            );
+
+            routes.MapRoute(
                 name: "Cars",
                 url: "cars/{make}",
                 defaults: new
@@ -116,6 +126,26 @@ namespace CarDealerApp
                 {
                     controller = "Sales",
                     action = "Percent"
+                }
+            );
+
+            routes.MapRoute(
+                name: "Add Sale",
+                url: "sales/add",
+                defaults: new
+                {
+                    controller = "Sales",
+                    action = "Add"
+                }
+            );
+
+            routes.MapRoute(
+                name: "Review Sale",
+                url: "sales/review",
+                defaults: new
+                {
+                    controller = "Sales",
+                    action = "Review"
                 }
             );
 

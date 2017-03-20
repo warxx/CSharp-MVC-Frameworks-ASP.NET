@@ -4,6 +4,7 @@ using System.Linq;
 using AutoMapper;
 using CarDealer.Data;
 using CarDealer.Models;
+using CarDealer.Models.BindingModels;
 using CarDealer.Models.ViewModels;
 
 namespace CarDealer.Services
@@ -61,6 +62,47 @@ namespace CarDealer.Services
                 Mapper.Instance.Map<IEnumerable<Sale>, IEnumerable<SaleViewModel>>(sales);
 
             return viewModels;
+        }
+
+        public AddSaleVm GetAddSaleVm()
+        {
+            var viewModel = new AddSaleVm();
+
+            var customers = this.context.Customers.ToList();
+
+            var cars = this.context.Cars.ToList();
+
+            List<int> discounts = new List<int>();
+            for (int i = 0; i < 50; i+=5)
+            {
+                discounts.Add(i);
+            }
+
+            viewModel.Customers = customers;
+            viewModel.Cars = cars;
+            viewModel.Discounts = discounts;
+
+            return viewModel;
+        }
+
+        public SaleReviewVm GetSaleReviewVm(AddSaleBm model)
+        {
+            var viewModel = new SaleReviewVm();
+            var car = this.context.Cars.Find(model.CarId);
+            var customer = this.context.Customers.Find(model.CustomerId);
+
+
+            viewModel.CarId = car.Id;
+            viewModel.CustomerId = customer.Id;
+            viewModel.CustomerName = customer.Name;
+            viewModel.CarName = car.Make + " " + car.Model;
+            viewModel.CarPrice = car.Parts.Sum(x => x.Price);
+            viewModel.IsYoungDriver = customer.IsYoungDriver;
+            viewModel.Discount = model.Discount;
+
+            viewModel.Discount += customer.IsYoungDriver ? 5 : 0;
+            viewModel.FinalCarPrice = (car.Parts.Sum(x => x.Price)/(1 + viewModel.Discount/100));
+            return viewModel;
         }
     }
 }

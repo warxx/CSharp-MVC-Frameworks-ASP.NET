@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CarDealer.Models.ViewModels.AddPartSupplierViewModel>
 @{
     ViewBag.Title = "Add Part";
 }
@@ -16,7 +16,12 @@
     </div>
     <div class="form-group">
         <label for="supplier">Supplier: </label>
-        <input id="supplier" type="text" name="supplier" class="form-control"/>
+        <select name="supplierId" id="supplier" class="form-control">
+            @foreach (var item in @Model)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
     </div>
     <div class="form-group">
         <label for="quantity">Quantity: </label>

@@ -7,7 +7,7 @@ namespace CarDealer.Models.BindingModels
 
         public double? Price { get; set; }
 
-        public string Supplier { get; set; }
+        public int SupplierId { get; set; }
 
         public int Quantity { get; set; }
 
