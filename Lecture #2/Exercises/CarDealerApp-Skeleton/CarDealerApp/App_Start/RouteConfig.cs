@@ -47,6 +47,16 @@ namespace CarDealerApp
                 );
 
             routes.MapRoute(
+                name: "Add Suppliers",
+                url: "suppliers/add",
+                defaults: new
+                {
+                    controller = "Suppliers",
+                    action = "Add"
+                }
+            );
+
+            routes.MapRoute(
                 name: "Suppliers",
                 url: "suppliers/{type}",
                 defaults: new

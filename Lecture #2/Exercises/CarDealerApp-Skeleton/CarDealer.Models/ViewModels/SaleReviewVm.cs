@@ -6,7 +6,7 @@
 
         public int CarId { get; set; }
 
-        public int Discount { get; set; }
+        public double? Discount { get; set; }
 
         public string CustomerName { get; set; }
 

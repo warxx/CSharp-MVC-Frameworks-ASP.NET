@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using CarDealer.Data;
 using CarDealer.Models.BindingModels;
@@ -61,7 +62,7 @@ namespace CarDealerApp.Controllers
 
             if (httpCookie != null && AuthenticationManager.IsAuthenticated(httpCookie.Value))
             {
-                ViewBag.Username = "dasdasda";//AuthenticationManager.GetUsername(httpCookie.Value);
+                //AuthenticationManager.GetUsername(httpCookie.Value);
                 return this.RedirectToAction("Make", "Cars", new { make = "all" });
             }
 
@@ -84,6 +85,7 @@ namespace CarDealerApp.Controllers
             {
                 this.service.LoginUser(this.Session.SessionID, model);
                 this.Response.SetCookie(new HttpCookie("sessionId", this.Session.SessionID));
+                this.Response.Cookies["sessionId"].Expires = DateTime.Now.AddDays(1);
                 return this.RedirectToAction("Make", "Cars", new { make = "all" });
             }
 

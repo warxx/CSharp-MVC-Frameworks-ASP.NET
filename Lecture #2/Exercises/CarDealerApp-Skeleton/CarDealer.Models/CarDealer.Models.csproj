@@ -48,6 +48,7 @@
     <Compile Include="BindingModels\EditPartBm.cs" />
     <Compile Include="BindingModels\LoginUserBm.cs" />
     <Compile Include="BindingModels\RegisterUserBm.cs" />
+    <Compile Include="BindingModels\SaleReviewBm.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Login.cs" />

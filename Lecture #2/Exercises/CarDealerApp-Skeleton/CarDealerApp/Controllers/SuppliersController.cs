@@ -10,6 +10,7 @@ using CarDealer.Data;
 using CarDealer.Models;
 using CarDealer.Models.ViewModels;
 using CarDealer.Services;
+using AuthenticationManager = CarDealerApp.Security.AuthenticationManager;
 
 namespace CarDealerApp.Controllers
 {
@@ -30,5 +31,22 @@ namespace CarDealerApp.Controllers
 
             return View(viewModels);
         }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            var httpCookie = this.Request.Cookies.Get("sessionId");
+
+            if (httpCookie == null || !AuthenticationManager.IsAuthenticated(httpCookie.Value))
+            {
+                return this.RedirectToAction("Login", "Users");
+            }
+
+            ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+
+            return this.View();
+        }
+
+        public ActionResult Add(bind)
     }
 }

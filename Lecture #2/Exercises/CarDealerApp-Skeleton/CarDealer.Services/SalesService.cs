@@ -101,8 +101,21 @@ namespace CarDealer.Services
             viewModel.Discount = model.Discount;
 
             viewModel.Discount += customer.IsYoungDriver ? 5 : 0;
-            viewModel.FinalCarPrice = (car.Parts.Sum(x => x.Price)/(1 + viewModel.Discount/100));
+            viewModel.FinalCarPrice = viewModel.CarPrice / (1 + (viewModel.Discount / 100));
             return viewModel;
+        }
+
+        public void AddSaleFromBm(SaleReviewBm model)
+        {
+            var sale = new Sale()
+            {
+                Car = this.context.Cars.Find(model.CarId),
+                Customer = this.context.Customers.Find(model.CustomerId),
+                Discount = model.Discount/100
+            };
+
+            this.context.Sales.Add(sale);
+            this.context.SaveChanges();
         }
     }
 }

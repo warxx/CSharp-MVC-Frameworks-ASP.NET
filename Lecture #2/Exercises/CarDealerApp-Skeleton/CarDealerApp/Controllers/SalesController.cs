@@ -98,7 +98,26 @@ namespace CarDealerApp.Controllers
                 return this.RedirectToAction("Login", "Users");
             }
 
+            ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+
             return this.View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Review([Bind(Include = "CustomerId, CarId, Discount")] SaleReviewBm model)
+        {
+            var httpCookie = this.Request.Cookies.Get("sessionId");
+
+            if (httpCookie == null || !AuthenticationManager.IsAuthenticated(httpCookie.Value))
+            {
+                return this.RedirectToAction("Login", "Users");
+            }
+
+            ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+            
+
+            this.service.AddSaleFromBm(model);
+            return this.RedirectToAction("All", "Sales");   
         }
     }
 }

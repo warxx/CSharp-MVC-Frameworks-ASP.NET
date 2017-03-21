@@ -217,6 +217,7 @@
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Sales\Add.cshtml" />
     <Content Include="Views\Sales\Review.cshtml" />
+    <Content Include="Views\Suppliers\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
