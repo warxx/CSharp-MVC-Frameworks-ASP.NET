@@ -57,6 +57,34 @@ namespace CarDealerApp
             );
 
             routes.MapRoute(
+                name: "Edit Supplier",
+                url: "suppliers/edit/{id}",
+                defaults: new
+                {
+                    controller = "Suppliers",
+                    action = "Edit"
+                },
+                constraints: new
+                {
+                    id = @"\d+"
+                }
+            );
+
+            routes.MapRoute(
+                name: "Delete Supplier",
+                url: "suppliers/delete/{id}",
+                defaults: new
+                {
+                    controller = "Suppliers",
+                    action = "Delete"
+                },
+                constraints: new
+                {
+                    id = @"\d+"
+                }
+            );
+
+            routes.MapRoute(
                 name: "Suppliers",
                 url: "suppliers/{type}",
                 defaults: new

@@ -218,6 +218,7 @@
     <Content Include="Views\Sales\Add.cshtml" />
     <Content Include="Views\Sales\Review.cshtml" />
     <Content Include="Views\Suppliers\Add.cshtml" />
+    <Content Include="Views\Suppliers\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
