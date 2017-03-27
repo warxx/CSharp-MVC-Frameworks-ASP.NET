@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CarDealer.Models.ViewModels.AllLogsViewModel>
+@{
+    ViewBag.Title = "All";
+}
+
+
+<h2>All Logs</h2>
+
+<form method="GET" class="form-inline">
+    <div class="form-group">
+        <input type="text" name="username" placeholder="Username..." class="form-control">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Search" />
+</form>
+<br/>
+
+
+<table class="table">
+    <tr>
+        <th>
+            User
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Operation)
+        </th>
+        <th>
+            Modified Table
+        </th>
+        <th>
+            Time
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedTable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyingDate)
+            </td>
+        </tr>
+    }
+
+</table>
+

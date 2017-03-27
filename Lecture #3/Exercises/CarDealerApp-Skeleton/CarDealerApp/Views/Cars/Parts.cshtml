@@ -1,0 +1,22 @@
+﻿@model CarDealer.Models.ViewModels.CarPartsViewModel
+
+@{
+    ViewBag.Title = "Parts";
+}
+
+<h2>Parts</h2>
+
+<h4>Car</h4>
+<p>Make: @Model.Car.Make</p>
+<p>Model: @Model.Car.Model</p>
+<p>Travelled distance: @Model.Car.TravelledDistance</p>
+<p>Parts:</p>
+<ul>
+    @foreach (var part in @Model.Parts)
+    {
+        <li>
+            <p>@part.Name - @part.Price$</p>
+        </li>
+    }
+</ul>
+

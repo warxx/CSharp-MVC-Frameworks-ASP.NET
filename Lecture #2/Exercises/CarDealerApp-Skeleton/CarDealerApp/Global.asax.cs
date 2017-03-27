@@ -62,6 +62,10 @@ namespace CarDealerApp
                 cfg.CreateMap<Part, AddCarPartVm>();
                 cfg.CreateMap<RegisterUserBm, User>();
                 cfg.CreateMap<AddSupplierBm, Supplier>();
+                cfg.CreateMap<Log, AllLogsViewModel>()
+                    .ForMember(vm => vm.Username,
+                        cfgExpression => cfgExpression
+                            .MapFrom(name => name.User.Username));
             });
         }
     }

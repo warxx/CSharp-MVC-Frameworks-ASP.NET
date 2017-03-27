@@ -26,7 +26,9 @@ namespace CarDealerApp.Controllers
 
             if (httpCookie != null && AuthenticationManager.IsAuthenticated(httpCookie.Value))
             {
-                ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+                var user = AuthenticationManager.GetUser(httpCookie.Value);
+                ViewBag.Username = user.Username;
+
                 return this.RedirectToAction("Make", "Cars", new { make = "all" } );
             }
 
@@ -41,7 +43,9 @@ namespace CarDealerApp.Controllers
 
             if (httpCookie != null && AuthenticationManager.IsAuthenticated(httpCookie.Value))
             {
-                ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+                var user = AuthenticationManager.GetUser(httpCookie.Value);
+                ViewBag.Username = user.Username;
+
                 return this.RedirectToAction("Make", "Cars", new { make = "all" });
             }
 
@@ -77,7 +81,9 @@ namespace CarDealerApp.Controllers
 
             if (httpCookie != null && AuthenticationManager.IsAuthenticated(httpCookie.Value))
             {
-                ViewBag.Username = AuthenticationManager.GetUsername(httpCookie.Value);
+                var user = AuthenticationManager.GetUser(httpCookie.Value);
+                ViewBag.Username = user.Username;
+
                 return this.RedirectToAction("Make", "Cars", new { make = "all" });
             }
 

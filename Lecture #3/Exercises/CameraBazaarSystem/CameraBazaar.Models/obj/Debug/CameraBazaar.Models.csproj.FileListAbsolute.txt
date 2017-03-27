@@ -1,0 +1,5 @@
+C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Models\bin\Debug\CameraBazaar.Models.dll
+C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Models\bin\Debug\CameraBazaar.Models.pdb
+C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Models\obj\Debug\CameraBazaar.Models.dll
+C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Models\obj\Debug\CameraBazaar.Models.pdb
+C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Models\obj\Debug\CameraBazaar.Models.csprojResolveAssemblyReference.cache

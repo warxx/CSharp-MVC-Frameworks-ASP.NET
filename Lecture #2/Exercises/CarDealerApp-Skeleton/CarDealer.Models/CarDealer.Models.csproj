@@ -49,11 +49,13 @@
     <Compile Include="BindingModels\EditPartBm.cs" />
     <Compile Include="BindingModels\EditSupplierBm.cs" />
     <Compile Include="BindingModels\LoginUserBm.cs" />
+    <Compile Include="BindingModels\LogsForUserBm.cs" />
     <Compile Include="BindingModels\RegisterUserBm.cs" />
     <Compile Include="BindingModels\SaleReviewBm.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sale.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="ViewModels\AddCarPartVm.cs" />
     <Compile Include="ViewModels\AddPartSupplierViewModel.cs" />
     <Compile Include="ViewModels\AddSaleVm.cs" />
+    <Compile Include="ViewModels\AllLogsViewModel.cs" />
     <Compile Include="ViewModels\EditPartViewModel.cs" />
     <Compile Include="ViewModels\EditSupplierVm.cs" />
     <Compile Include="ViewModels\PartViewModel.cs" />

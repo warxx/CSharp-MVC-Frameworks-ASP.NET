@@ -40,12 +40,14 @@ namespace CarDealer.Services
             return viewModels;
         }
 
-        public void AddSupplierFromBm(AddSupplierBm model)
+        public void AddSupplierFromBm(AddSupplierBm model, int userId)
         {
             var supplier = Mapper.Map<AddSupplierBm, Supplier>(model);
 
             this.context.Suppliers.Add(supplier);
             this.context.SaveChanges();
+
+            this.AddLog(OperationLog.Add, userId);
         }
 
         public EditSupplierVm GetEditSupplierVm(int id)
@@ -61,20 +63,40 @@ namespace CarDealer.Services
             return viewModel;
         }
 
-        public void EditSupplier(EditSupplierBm model)
+        public void EditSupplier(EditSupplierBm model, int userId)
         {
             var supplier = this.context.Suppliers.Find(model.Id);
 
             supplier.Name = model.Name;
             this.context.SaveChanges();
+
+            this.AddLog(OperationLog.Edit, userId);
         }
 
-        public void DeleteSupplier(int id)
+        public void DeleteSupplier(int id, int userId)
         {
             var parts = this.context.Parts.Where(x => x.Supplier.Id == id);
             var supplier = this.context.Suppliers.Find(id);
             this.context.Parts.RemoveRange(parts);
             this.context.Suppliers.Remove(supplier);
+            this.context.SaveChanges();
+
+            this.AddLog(OperationLog.Delete, userId);
+        }
+
+        public void AddLog(OperationLog operation, int userId)
+        {
+            var user = this.context.Users.Find(userId);
+
+            var log = new Log()
+            {
+                User = user,
+                ModifiedTable = "Sale",
+                Operation = operation,
+                ModifyingDate = DateTime.Now
+            };
+
+            this.context.Logs.Add(log);
             this.context.SaveChanges();
         }
     }
