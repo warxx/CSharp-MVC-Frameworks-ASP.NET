@@ -14,10 +14,12 @@ namespace CameraBazaar.Models.EntityModels
 
         public int Id { get; set; }
 
-        [Required, Username]
+        [Username]
+        [Required]
         public string Username { get; set; }
 
-        [Required, EmailAddress]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]

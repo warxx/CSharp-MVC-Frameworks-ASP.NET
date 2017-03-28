@@ -23,5 +23,12 @@ namespace CameraBazaar.App.Security
                 .FirstOrDefault(x => x.SessionId == sessionId && x.IsActive);
             return login.User;
         }
+
+        public static void Logout(string sessionId)
+        {
+            var login = Context.Logins.FirstOrDefault(x => x.SessionId == sessionId);
+            login.IsActive = false;
+            Context.SaveChanges();
+        }
     }
 }

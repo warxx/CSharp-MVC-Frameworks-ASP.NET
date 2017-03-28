@@ -53,15 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CamerasService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CameraBazaar.App\CameraBazaar.App.csproj">
-      <Project>{1ad5d768-670e-4f33-a049-70fdf09bcdbe}</Project>
-      <Name>CameraBazaar.App</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CameraBazaar.Data\CameraBazaar.Data.csproj">
       <Project>{ca09d1c9-84b3-4750-a5ce-553d8a7415c8}</Project>
       <Name>CameraBazaar.Data</Name>
