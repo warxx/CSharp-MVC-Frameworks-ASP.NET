@@ -44,6 +44,7 @@
     <Compile Include="Attributes\UsernameAttribute.cs" />
     <Compile Include="BindingModels\RegisterUserBm.cs" />
     <Compile Include="Constants\ValidationMessages.cs" />
+    <Compile Include="Constants\ValidationRegularExpressions.cs" />
     <Compile Include="EntityModels\Camera.cs" />
     <Compile Include="EntityModels\Login.cs" />
     <Compile Include="EntityModels\User.cs" />
