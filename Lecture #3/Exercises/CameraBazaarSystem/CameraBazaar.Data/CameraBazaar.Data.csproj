@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA09D1C9-84B3-4750-A5CE-553D8A7415C8}</ProjectGuid>
+    <ProjectGuid>{EAC7992F-CC5F-4895-997B-B4339F24DD66}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CameraBazaar.Data</RootNamespace>
@@ -62,10 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CameraBazaar.Models\CameraBazaar.Models.csproj">
-      <Project>{AE560DBB-95D5-422A-8809-55351636AA24}</Project>
+      <Project>{ae560dbb-95d5-422a-8809-55351636aa24}</Project>
       <Name>CameraBazaar.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

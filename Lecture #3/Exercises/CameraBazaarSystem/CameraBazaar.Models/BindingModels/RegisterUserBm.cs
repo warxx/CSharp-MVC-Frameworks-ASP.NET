@@ -8,7 +8,7 @@ namespace CameraBazaar.Models.BindingModels
     public class RegisterUserBm
     {
         [Required(ErrorMessage = RequiredValidationMessage)]
-        [Username]
+        [RegularExpression(UsernameRegex, ErrorMessage = UsernameValidationMessage)]
         public string Username { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]
@@ -20,6 +20,8 @@ namespace CameraBazaar.Models.BindingModels
         public string Password { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]
+        [RegularExpression(PasswordRegex, ErrorMessage = PasswordValidationMessage)]
+        [Compare("Password", ErrorMessage = ConfirmPasswordValidationMsg)]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]

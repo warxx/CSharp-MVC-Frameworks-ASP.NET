@@ -1,0 +1,28 @@
+﻿@model CameraBazaar.Models.ViewModels.LoginUserVm
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login Page</h2>
+
+<form method="post">
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Username)
+        @Html.EditorFor(vm => vm.Username, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(vm => vm.Username)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Password)
+        @Html.EditorFor(vm => vm.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+        @Html.ValidationMessageFor(vm => vm.Password)
+    </div>
+
+    <div class="form-group">
+        <input class="btn btn-info" type="submit" value="Login" />
+    </div>
+</form>
+
+@section scripts
+{
+    @Scripts.Render("jquery.validate.unobtrusive.min")
+}

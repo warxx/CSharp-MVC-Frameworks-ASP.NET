@@ -6,15 +6,11 @@ namespace CameraBazaar.App.Security
 {
     public class AuthenticationManager
     {
+
         public static bool IsAuthenticated(string sessionId)
         {
-            if (Context.Logins
-                .Any(x => x.SessionId == sessionId && x.IsActive))
-            {
-                return true;
-            }
-
-            return false;
+            return Context.Logins
+                .Any(x => x.SessionId == sessionId && x.IsActive);
         }
 
         public static User GetUser(string sessionId)

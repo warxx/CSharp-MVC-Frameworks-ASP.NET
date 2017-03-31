@@ -46,3 +46,15 @@ C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET
 C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.csprojResolveAssemblyReference.cache
 C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.dll
 C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.pdb
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\CarDealer.Data.dll.config
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\CarDealer.Data.dll
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\CarDealer.Data.pdb
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\CarDealer.Models.dll
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\EntityFramework.dll
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\CarDealer.Models.pdb
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\EntityFramework.xml
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.csprojResolveAssemblyReference.cache
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.dll
+C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CarDealerApp-Skeleton\CarDealer.Data\obj\Debug\CarDealer.Data.pdb

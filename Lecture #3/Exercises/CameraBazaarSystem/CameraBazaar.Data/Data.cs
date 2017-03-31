@@ -1,4 +1,5 @@
-﻿namespace CameraBazaar.Data
+﻿
+namespace CameraBazaar.Data
 {
     public class Data
     {

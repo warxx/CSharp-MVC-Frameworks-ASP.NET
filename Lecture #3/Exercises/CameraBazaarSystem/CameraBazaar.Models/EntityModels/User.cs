@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using CameraBazaar.Models.Attributes;
 using static CameraBazaar.Models.Constants.ValidationMessages;
 using static CameraBazaar.Models.Constants.ValidationRegularExpressions;
 
@@ -16,8 +15,8 @@ namespace CameraBazaar.Models.EntityModels
 
         public int Id { get; set; }
 
-        [Username]
         [Required(ErrorMessage = RequiredValidationMessage)]
+        [RegularExpression(UsernameRegex, ErrorMessage = UsernameValidationMessage)]
         public string Username { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]

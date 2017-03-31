@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\MaxIsoAttribute.cs" />
+    <Compile Include="Attributes\MinIsoAttribute.cs" />
     <Compile Include="Attributes\UsernameAttribute.cs" />
+    <Compile Include="BindingModels\AddCameraBm.cs" />
+    <Compile Include="BindingModels\LoginUserBm.cs" />
     <Compile Include="BindingModels\RegisterUserBm.cs" />
     <Compile Include="Constants\ValidationMessages.cs" />
     <Compile Include="Constants\ValidationRegularExpressions.cs" />
@@ -51,8 +55,11 @@
     <Compile Include="Enums\LightMetering.cs" />
     <Compile Include="Enums\Make.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AddCameraVm.cs" />
     <Compile Include="ViewModels\AllCamerasVm.cs" />
+    <Compile Include="ViewModels\LoginUserVm.cs" />
     <Compile Include="ViewModels\RegisterUserVm.cs" />
+    <Compile Include="ViewModels\UserProfileVm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

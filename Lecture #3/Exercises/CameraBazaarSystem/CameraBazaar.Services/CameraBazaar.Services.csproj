@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CameraBazaar.Data\CameraBazaar.Data.csproj">
-      <Project>{ca09d1c9-84b3-4750-a5ce-553d8a7415c8}</Project>
+      <Project>{eac7992f-cc5f-4895-997b-b4339f24dd66}</Project>
       <Name>CameraBazaar.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CameraBazaar.Models\CameraBazaar.Models.csproj">

@@ -1,15 +1,3 @@
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.dll.config
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.dll
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.pdb
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Models.dll
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\EntityFramework.dll
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Models.pdb
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\EntityFramework.xml
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\obj\Debug\CameraBazaar.Data.csprojResolveAssemblyReference.cache
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\obj\Debug\CameraBazaar.Data.dll
-C:\Users\warXx\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\obj\Debug\CameraBazaar.Data.pdb
 C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.dll.config
 C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.dll
 C:\Users\c0dyy_000\Desktop\C# MVC Frameworks - ASP.NET\CSharp-MVC-Frameworks-ASP.NET\Lecture #3\Exercises\CameraBazaarSystem\CameraBazaar.Data\bin\Debug\CameraBazaar.Data.pdb
