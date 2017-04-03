@@ -6,5 +6,6 @@
         public const string PhoneRegex = "^\\+[0-9]{10,12}$";
         public const string UsernameRegex = "^[a-zA-Z]{4,20}$";
         public const string ImageUrlRegex = "^(http:\\/\\/|https:\\/\\/)(.+)$";
+        public const string CameraModelRegex = "^[A-Z\\d]*-?[A-Z\\d]*$";
     }
 }

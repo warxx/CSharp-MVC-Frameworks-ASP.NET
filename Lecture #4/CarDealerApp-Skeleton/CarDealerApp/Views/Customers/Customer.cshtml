@@ -1,0 +1,14 @@
+﻿@model CarDealer.Models.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+<h2>Customer</h2>
+
+<p>Name: @Model.Customer.Name</p>
+<p>Bought cars: @Model.Customer.Sales.Count</p>
+<p>Total spent money: @Model.TotalSpentMoney</p>
+    
+
+

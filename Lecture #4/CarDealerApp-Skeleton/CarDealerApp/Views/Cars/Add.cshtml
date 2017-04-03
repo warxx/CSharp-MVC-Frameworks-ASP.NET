@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CarDealer.Models.ViewModels.AddCarPartVm>
+@{
+    ViewBag.Title = "Add Car";
+}
+
+<h2>Add Car</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.Label("Make")
+        @Html.Editor("Make", new {htmlAttributes = new { @class="form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.Label("Model")
+        @Html.Editor("carModel", new { htmlAttributes = new { @class="form-control", id="Model" }})
+    </div>
+    <div class="form-group">
+        @Html.Label("Travelled Distance", new {@for = "travelledDistance"})
+        @Html.Editor("travelledDistance", new {htmlAttributes = new {@class = "form-control", type = "number", step = 1, id = "travelledDistance"}})
+    </div>
+    <div class="form-group">
+        @Html.ListBox("partsId", new SelectList(Model, "Id", "Name"), new {@class="form-control", size=10})
+    </div>
+    <div class="form-group">
+        <input class="btn btn-info" type="submit" value="Add" />
+    </div>
+    }

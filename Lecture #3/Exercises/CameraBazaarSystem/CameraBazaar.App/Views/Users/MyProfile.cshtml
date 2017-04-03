@@ -1,0 +1,73 @@
+﻿@model CameraBazaar.Models.ViewModels.UserProfileVm
+
+@{
+    ViewBag.Title = "My Profile";
+}
+
+<h2>
+    @Html.DisplayFor(vm => vm.Username)&nbsp;&nbsp;&nbsp;@Html.ActionLink("Edit Profile", "Edit", "Users",null, new { @class= "btn btn-primary", role = "button" })@*<a href="#" class="btn btn-primary" role="button">Edit Profile</a>*@
+</h2>
+
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.Email):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.Email)
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.Phone):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.Phone)
+</p>
+<p>
+    <strong>Cameras:&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.InStockCameras) in stock /
+    @Html.DisplayFor(vm => vm.OutStockCameras) out of stock
+</p>
+<br />
+
+<h4><strong>Cameras</strong></h4>
+
+@if (!Model.UserCameras.Any())
+{
+    <p>The user is not selling any cameras. Go to @Html.ActionLink("home page", "All", "Cameras") to find more offers of other users.</p>
+}
+
+@foreach (var vm in Model.UserCameras)
+{
+    <div class="container">
+        <div class="card col-md-5">
+            <div class="row" style="border: 1px solid black; padding-bottom: 5px; padding-top: 5px; border-radius: 5px">
+                <div class="col-md-4">
+                    <div class="card-img-bottom">
+                        <img class="img-thumbnail" src="@vm.ImageUrl" height="200" width="200">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-block">
+                        <h4 class="card-title">@Html.DisplayFor(vms => vm.Make) @Html.DisplayFor(vms => vm.Model)</h4>
+                        <strong><span>Price: $@Html.DisplayFor(vms => vm.Price) - </span></strong>
+                        <strong>
+                            @if (vm.Quantity > 0)
+                            {
+                                <span class="text-success">IN STOCK</span>
+                            }
+                            else
+                            {
+                                <span class="text-danger">OUT OF STOCK</span>
+                            }
+                        </strong>
+
+                        <br />
+                        <br />
+
+                        <a class="card-text" href="#">Details</a>
+                        @Html.ActionLink("Edit", "Edit", "Cameras", new { id = vm.Id }, new { @class = "btn btn-primary col-md-offset-3", role = "button" })
+                        @Html.ActionLink("Delete", "Delete", "Cameras", new { id = vm.Id }, new { @class = "btn btn-warning", role = "button" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+}
+
+
+

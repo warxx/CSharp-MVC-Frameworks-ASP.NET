@@ -1,0 +1,9 @@
+﻿@model HandleErrorInfo
+@{
+    ViewBag.Title = "Range Error Occured";
+}
+
+<h2>Sorry, an error occurred.</h2>
+<h3>RangeError: @Model.Exception.Message</h3>
+@Html.Image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Face-sad.svg/1024px-Face-sad.svg.png", "200", "200", "Sad emoticon")
+

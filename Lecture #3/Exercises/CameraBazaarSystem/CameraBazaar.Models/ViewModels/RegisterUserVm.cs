@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using CameraBazaar.Models.Attributes;
 using static CameraBazaar.Models.Constants.ValidationMessages;
 using static CameraBazaar.Models.Constants.ValidationRegularExpressions;
@@ -19,6 +20,7 @@ namespace CameraBazaar.Models.ViewModels
         [RegularExpression(PasswordRegex, ErrorMessage = PasswordValidationMessage)]
         public string Password { get; set; }
 
+        [DisplayName("Confirm Password")]
         [Required(ErrorMessage = RequiredValidationMessage)]
         [RegularExpression(PasswordRegex, ErrorMessage = PasswordValidationMessage)]
         [Compare("Password", ErrorMessage = ConfirmPasswordValidationMsg)]

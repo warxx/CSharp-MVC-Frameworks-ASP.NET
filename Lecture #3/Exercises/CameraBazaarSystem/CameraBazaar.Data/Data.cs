@@ -3,8 +3,8 @@ namespace CameraBazaar.Data
 {
     public class Data
     {
-        private static CameraBazaarContext context;
+        private CameraBazaarContext context;
 
-        public static CameraBazaarContext Context => context = context ?? (context = new CameraBazaarContext());
+        public CameraBazaarContext Context => context = context ?? (context = new CameraBazaarContext());
     }
 }

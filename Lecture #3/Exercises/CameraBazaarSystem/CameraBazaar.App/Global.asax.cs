@@ -36,6 +36,11 @@ namespace CameraBazaar.App
                 cfg.CreateMap<RegisterUserBm, User>();
                 cfg.CreateMap<Camera, AddCameraVm>();
                 cfg.CreateMap<AddCameraBm, Camera>();
+                cfg.CreateMap<AddCameraBm, AddCameraVm>();
+                cfg.CreateMap<Camera, CameraDetailsVm>();
+                cfg.CreateMap<Camera, EditCameraVm>();
+                cfg.CreateMap<EditCameraBm, Camera>();
+                cfg.CreateMap<Camera, DeleteCameraVm>();
             });
             
         }

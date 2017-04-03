@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using CameraBazaar.Models.Attributes;
+using CameraBazaar.Models.EntityModels;
 using CameraBazaar.Models.Enums;
 using static CameraBazaar.Models.Constants.ValidationMessages;
 using static CameraBazaar.Models.Constants.ValidationRegularExpressions;
@@ -12,6 +13,7 @@ namespace CameraBazaar.Models.BindingModels
         public Make Make { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]
+        [RegularExpression(CameraModelRegex, ErrorMessage = CameraModelValidationMsg)]
         public string CameraModel { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]

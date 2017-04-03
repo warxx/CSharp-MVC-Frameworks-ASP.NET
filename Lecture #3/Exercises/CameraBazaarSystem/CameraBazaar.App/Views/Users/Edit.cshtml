@@ -1,0 +1,55 @@
+﻿@model CameraBazaar.Models.ViewModels.EditProfileVm
+@{
+    ViewBag.Title = "Edit Profile";
+}
+
+<h2>Edit Profile</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(vm => vm.Email, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(vm => vm.Email, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(vm => vm.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(vm => vm.Phone, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(vm => vm.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(vm => vm.Phone)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(vm => vm.CurrentPassword, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(vm => vm.CurrentPassword, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                @Html.ValidationMessageFor(vm => vm.CurrentPassword)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(vm => vm.NewPassword, htmlAttributes: new { @class = "control-label col-sm-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(vm => vm.NewPassword, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                @Html.ValidationMessageFor(vm => vm.NewPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4">
+                @Html.ActionLink("Cancel", "Profile", "Users",null, new { @class= "btn btn-default" })
+                <input class="btn btn-info" type="submit" value="Edit"/>
+            </div>
+            
+        </div>
+    </div>
+
+}
+
+@section scripts
+{
+    @Scripts.Render("jquery.validate.unobtrusive.min")
+}
+

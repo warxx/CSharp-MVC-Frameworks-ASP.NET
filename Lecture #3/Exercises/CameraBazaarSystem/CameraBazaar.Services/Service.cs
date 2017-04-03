@@ -4,11 +4,11 @@ namespace CameraBazaar.Services
 {
     public abstract class Service
     {
-        protected CameraBazaarContext context;
+        protected Data.Data data;
 
-        protected Service(CameraBazaarContext context)
+        protected Service()
         {
-            this.context = context;
+            this.data = new Data.Data();
         }
     }
 }

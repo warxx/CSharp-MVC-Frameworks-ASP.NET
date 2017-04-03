@@ -234,6 +234,11 @@
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Cameras\Add.cshtml" />
     <Content Include="Views\Users\Profile.cshtml" />
+    <Content Include="Views\Users\MyProfile.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Cameras\Details.cshtml" />
+    <Content Include="Views\Cameras\Edit.cshtml" />
+    <Content Include="Views\Cameras\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

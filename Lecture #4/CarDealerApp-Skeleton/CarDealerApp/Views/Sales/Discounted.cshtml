@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CarDealer.Models.ViewModels.SaleViewModel>
+
+@{
+    ViewBag.Title = "All Discounted Sales";
+}
+
+<h2>All Discounted Sales</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            Car
+        </th>
+        <th>
+            Travelled Distance
+        </th>
+        <th>
+            Sold to
+        </th>
+        <th>
+            Price with discount
+        </th>
+        <th>
+            Price without discount
+        </th>
+        <th>
+            Discount
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make) - @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelledDistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceWithDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceWithoutDiscount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+        </tr>
+    }
+

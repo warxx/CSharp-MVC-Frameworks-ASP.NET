@@ -14,6 +14,7 @@ namespace CameraBazaar.Models.EntityModels
         public Make Make { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]
+        [RegularExpression(CameraModelRegex, ErrorMessage = CameraModelValidationMsg)]
         public string CameraModel { get; set; }
 
         [Required(ErrorMessage = RequiredValidationMessage)]
@@ -57,5 +58,7 @@ namespace CameraBazaar.Models.EntityModels
         [Required(ErrorMessage = RequiredValidationMessage)]
         [RegularExpression(ImageUrlRegex, ErrorMessage = ImageUrlValidationMsg)]
         public string ImageUrl { get; set; }
+
+        public virtual User Seller { get; set; }
     }
 }

@@ -32,7 +32,8 @@
                         </strong>
                         <br />
                         <br />
-                        <a class="card-text" href="#">Details</a>
+                        @Html.ActionLink("Details", "Details", "Cameras", new { id = vm.Id }, new { @class = "card-text" })
+                        @*<a class="card-text" href="#">Details</a>*@
                     </div>
                 </div>
             </div>

@@ -22,6 +22,8 @@ namespace CameraBazaar.Models.Constants
         public const string VideoResolutionValidationMsg = "Video resolution must be described with text no longer than 15 symbols.";
         public const string DescriptionValidationMsg = "Description for the camera must be no more than 6000 symbols";
         public const string ImageUrlValidationMsg = "Image URL must start with http:// or https://";
+        public const string CameraModelValidationMsg =
+            "Model can contain only uppercase letters, digits and dash (\"-\").";
 
     }
 }

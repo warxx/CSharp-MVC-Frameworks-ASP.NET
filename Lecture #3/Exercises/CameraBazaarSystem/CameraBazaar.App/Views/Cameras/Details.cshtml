@@ -1,0 +1,68 @@
+﻿@using CameraBazaar.App.Extensions
+@model CameraBazaar.Models.ViewModels.CameraDetailsVm
+
+@{
+    ViewBag.Title = "Camera Details";
+}
+
+<h3>
+    <strong>
+        @Html.DisplayFor(vm => vm.Make) @Html.DisplayFor(vm => vm.CameraModel) - $@Html.DisplayFor(vm => vm.Price) - 
+        @if (Model.Quantity > 0)
+        {
+            <span class="text-success">IN STOCK</span>
+        }
+        else
+        {
+            <span class="text-damger">OUT OF STOCK</span>
+        }
+    </strong>
+    <br/>
+    @Html.ActionLink($"{Model.Seller.Username}", "Profile", "Users", new { username = $"{Model.Seller.Username}" }, null)
+</h3> 
+<br/>
+
+
+@Html.Image(Model.ImageUrl, alt: "camera picture")
+<br/>
+<br/>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.IsFullFrame):&nbsp;&nbsp;</strong>
+    @if (Model.IsFullFrame == true)
+    {
+        <span>Yes</span>
+    }
+    else
+    {
+        <span>No</span>
+    }
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.MinShutterSpeed):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.MinShutterSpeed)"
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.MaxShutterSpeed):&nbsp;&nbsp;</strong>
+    1/@Html.DisplayFor(vm => vm.MaxShutterSpeed)
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.MinIso):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.MinIso)
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.MaxIso):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.MaxIso)
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.VideoResolution):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.VideoResolution)p
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.LightMetering):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.LightMetering)
+</p>
+<p>
+    <strong>@Html.DisplayNameFor(vm => vm.Description):&nbsp;&nbsp;</strong>
+    @Html.DisplayFor(vm => vm.Description)
+</p>
+<br />

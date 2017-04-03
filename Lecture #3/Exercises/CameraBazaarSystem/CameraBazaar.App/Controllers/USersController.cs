@@ -15,7 +15,7 @@ namespace CameraBazaar.App.Controllers
       
         public UsersController()
         {
-            this.service = new UserService(Data.Data.Context);
+            this.service = new UserService();
         }
 
         [Route("register")]
@@ -132,12 +132,63 @@ namespace CameraBazaar.App.Controllers
             var user = AuthenticationManager.GetUser(httpCookie.Value);
             ViewBag.Username = user.Username;
 
+            if (string.IsNullOrEmpty(username) || username == user.Username)
+            {
+                var vm = this.service.GetMyProfileVm(user);
+
+                return this.View("MyProfile", vm);
+            }
+
             var viewModel = this.service.GetUserProfileVm(username);
 
             if (viewModel == null)
             {
                 return new HttpNotFoundResult("Current profile is not found. :(");
             }
+
+            return this.View(viewModel);
+        }
+
+        [Route("profile/edit")]
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            var httpCookie = this.Request.Cookies.Get("sessionId");
+
+            if (httpCookie == null || !AuthenticationManager.IsAuthenticated(httpCookie.Value))
+            {
+                return this.RedirectToAction("Login");
+            }
+
+            var user = AuthenticationManager.GetUser(httpCookie.Value);
+            ViewBag.Username = user.Username;
+
+            var viewModel = this.service.GetEditProfileVm(user);
+
+            return this.View(viewModel);
+        }
+
+        [Route("profile/edit")]
+        [HttpPost]
+        public ActionResult Edit([Bind(Exclude = "")] EditProfileBm model)
+        {
+            var httpCookie = this.Request.Cookies.Get("sessionId");
+
+            if (httpCookie == null || !AuthenticationManager.IsAuthenticated(httpCookie.Value))
+            {
+                return this.RedirectToAction("Login");
+            }
+
+            var user = AuthenticationManager.GetUser(httpCookie.Value);
+            ViewBag.Username = user.Username;
+
+            if (this.ModelState.IsValid && user.Password == model.CurrentPassword)
+            {
+                this.service.EditProfileFromBm(model, user);
+                return this.RedirectToAction("Profile", new { username = $"{user.Username}"});
+            }
+
+            var viewModel = this.service.GetEditProfileVm(user);
 
             return this.View(viewModel);
         }

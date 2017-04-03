@@ -1,0 +1,9 @@
+﻿@using CarDealer.Models
+@{
+    ViewBag.Title = "Persons";
+}
+
+<h2>Persons</h2>
+
+@Html.Table((IEnumerable<Person>)ViewBag.People, new []{ "table-striped", "table-bordered", "table"})
+
