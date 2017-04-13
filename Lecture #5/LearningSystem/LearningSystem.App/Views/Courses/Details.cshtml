@@ -1,0 +1,31 @@
+﻿@model LearningSystem.Models.ViewModels.Courses.DetailsCourseVm
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+<div class="container">
+    <h2>@Html.DisplayFor(vm => vm.Name)</h2>
+    <div class="row">
+        <div class="col-sm-5">
+
+
+            <p><strong>@Html.DisplayNameFor(vms => vms.Description):</strong> @Html.DisplayFor(vm => vm.Description)</p>
+            <br/>
+            <p><strong>@Html.DisplayNameFor(vms => vms.StartDate):</strong> @Html.DisplayFor(vm => vm.StartDate)</p>
+
+            <p><strong>@Html.DisplayNameFor(vms => vms.EndDate):</strong> @Html.DisplayFor(vm => vm.EndDate)</p>
+            
+            <div>
+                @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-warning" })
+                
+                @if (User.Identity.IsAuthenticated && Model.StartDate > DateTime.Now)
+                {
+                        @Html.ActionLink("Sign In", "Enroll", "Users", new {id = Model.Id}, new {@class = "btn btn-success col-sm-offset-2"})
+                }
+            </div>
+            
+        </div>
+
+    </div>
+</div>

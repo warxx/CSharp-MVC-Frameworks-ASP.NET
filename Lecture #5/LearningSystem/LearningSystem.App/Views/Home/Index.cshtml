@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LearningSystem.Models.ViewModels.Courses.CourseVm>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Welcome to the Learning System</h2>
+<div class="row">
+    <div class="col-sm-6">
+        
+        @foreach (var vm in Model)
+        {
+            <hr />
+            <div class="card">
+                <div class="card-block">
+                    <h3 class="card-title">@Html.DisplayFor(vms => vm.Name)</h3>
+                    <br/>
+                    <p class="card-text">@Html.DisplayNameFor(model => model.StartDate): @Html.DisplayFor(vms => vm.StartDate)</p>
+                    @Html.ActionLink("Details", "Details", "Courses", new { id = vm.Id }, null)
+                </div>
+            </div>
+            <br/>
+        }
+    </div>
+</div>

@@ -239,6 +239,9 @@
     <Content Include="Views\Cameras\Details.cshtml" />
     <Content Include="Views\Cameras\Edit.cshtml" />
     <Content Include="Views\Cameras\Delete.cshtml" />
+    <Content Include="Views\Shared\_ProfileLayout.cshtml" />
+    <Content Include="Views\Users\_LastLogin.cshtml" />
+    <Content Include="Views\Cameras\_CameraDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

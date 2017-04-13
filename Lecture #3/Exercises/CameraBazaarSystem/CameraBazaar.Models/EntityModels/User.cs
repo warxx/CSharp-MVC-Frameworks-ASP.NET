@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using static CameraBazaar.Models.Constants.ValidationMessages;
 using static CameraBazaar.Models.Constants.ValidationRegularExpressions;
@@ -30,6 +31,8 @@ namespace CameraBazaar.Models.EntityModels
         [Required(ErrorMessage = RequiredValidationMessage)]
         [RegularExpression(PhoneRegex, ErrorMessage = PhoneValidationMessage)]
         public string Phone { get; set; }
+
+        public DateTime? LastLoginTime { get; set; }
 
         public virtual ICollection<Camera> Cameras { get; set; }
     }

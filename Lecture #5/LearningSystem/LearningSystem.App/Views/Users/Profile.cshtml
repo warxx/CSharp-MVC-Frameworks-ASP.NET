@@ -1,0 +1,33 @@
+﻿@model LearningSystem.Models.ViewModels.Users.UserProfileVm
+
+@{
+    ViewBag.Title = "Profile Page";
+}
+
+<h2>My Profile&nbsp;&nbsp;&nbsp;@Html.ActionLink("Edit", "Edit", "Users", null, new { @class="btn btn-info"})</h2>
+
+<h4>@Html.DisplayNameFor(vm => vm.Name): @Html.DisplayFor(vms => vms.Name)</h4>
+<h4>@Html.DisplayNameFor(vm => vm.Email): <a href="#">@Html.DisplayFor(vms => vms.Email)</a></h4>
+<h4>@Html.DisplayNameFor(vm=>vm.BirthDate): @Html.DisplayFor(vms=> vms.BirthDate)</h4>
+<br/>
+
+<table class="table table-responsive">
+    <tr>
+        <th>Name</th>
+        <th>Grade</th>
+        <th></th>
+    </tr>
+    @foreach (var model in Model.EnrolledCourses)
+    {
+        <tr>
+            <td>@Html.DisplayFor(vm => model.Name)</td>
+            <td>@Html.DisplayFor(vm => model.Grade)</td>
+            <td>@Html.ActionLink("Details", "Details", "Courses", new { id = model.Id }, null)</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-warning" })
+
+
+

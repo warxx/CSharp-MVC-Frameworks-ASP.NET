@@ -2,12 +2,15 @@
 
 @{
     ViewBag.Title = "My Profile";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
 }
 
-<h2>
-    @Html.DisplayFor(vm => vm.Username)&nbsp;&nbsp;&nbsp;@Html.ActionLink("Edit Profile", "Edit", "Users",null, new { @class= "btn btn-primary", role = "button" })@*<a href="#" class="btn btn-primary" role="button">Edit Profile</a>*@
-</h2>
 
+<h2>
+    @Html.DisplayFor(vm => vm.Username)&nbsp;&nbsp;&nbsp;@Html.ActionLink("Edit Profile", "Edit", "Users", null, new { @class = "btn btn-primary", role = "button" })
+</h2>
+<h5>@Html.Action("LastLogin", "Users")</h5>
+<hr/>
 <p>
     <strong>@Html.DisplayNameFor(vm => vm.Email):&nbsp;&nbsp;</strong>
     @Html.DisplayFor(vm => vm.Email)

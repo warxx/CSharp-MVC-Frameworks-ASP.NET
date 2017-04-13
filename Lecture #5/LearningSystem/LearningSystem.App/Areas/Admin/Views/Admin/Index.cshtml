@@ -1,0 +1,52 @@
+﻿@model LearningSystem.Models.ViewModels.Admin.IndexVm
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Panel</h2>
+
+@Html.ActionLink("Add Course", "Add", "Admin", null, new { @class="btn btn-primary" })
+<br/>
+<br/>
+
+<div class="row">
+    <table class="table table-striped" style="float: left; width: 40%">
+        <tr>
+            <th>Courses</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var vm in Model.Courses.OrderBy(x=>x.StartDate))
+        {
+            <tr>
+                <td>@Html.DisplayFor(vms => vm.Name)</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        }
+
+    </table>
+
+    <table class="table table-striped col-sm-offset-1" style="float: left; width: 40%">
+        <tr>
+            <th>Users</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var vm in Model.Students)
+        {
+            <tr>
+                <td>@Html.DisplayFor(vms => vm.Name)</td>
+                <td>Set role</td>
+                <td>Delete</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+

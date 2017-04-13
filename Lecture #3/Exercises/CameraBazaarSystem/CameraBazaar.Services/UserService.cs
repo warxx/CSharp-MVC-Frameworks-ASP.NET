@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using CameraBazaar.Data;
@@ -34,6 +35,7 @@ namespace CameraBazaar.Services
                 this.data.Context.Users.FirstOrDefault(
                     x => x.Username == model.Username && x.Password == model.Password);
             myLogin.User = user;
+            myLogin.LoginTime = DateTime.Now;
 
             this.data.Context.SaveChanges();
         }

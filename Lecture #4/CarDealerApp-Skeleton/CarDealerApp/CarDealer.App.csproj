@@ -141,6 +141,7 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Filters\LogAttribute.cs" />
+    <Compile Include="Filters\TimerAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

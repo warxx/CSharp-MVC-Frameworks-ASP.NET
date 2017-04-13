@@ -10,6 +10,7 @@ namespace CarDealerApp
         {
             filters.Add(new HandleErrorAttribute());
           //  filters.Add(new LogAttribute());
+            filters.Add(new TimerAttribute());
         }
     }
 }

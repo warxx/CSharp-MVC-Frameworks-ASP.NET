@@ -8,6 +8,7 @@ namespace CameraBazaar.Models.Attributes
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
+
             if (value == null)
             {
                 return new ValidationResult(RequiredValidationMessage);

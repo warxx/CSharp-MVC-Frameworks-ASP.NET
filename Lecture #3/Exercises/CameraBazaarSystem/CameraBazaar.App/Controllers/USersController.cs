@@ -130,6 +130,7 @@ namespace CameraBazaar.App.Controllers
             }
 
             var user = AuthenticationManager.GetUser(httpCookie.Value);
+
             ViewBag.Username = user.Username;
 
             if (string.IsNullOrEmpty(username) || username == user.Username)
@@ -149,7 +150,7 @@ namespace CameraBazaar.App.Controllers
             return this.View(viewModel);
         }
 
-        [Route("profile/edit")]
+        [Route("editprofile")]
         [HttpGet]
         public ActionResult Edit()
         {
@@ -168,7 +169,7 @@ namespace CameraBazaar.App.Controllers
             return this.View(viewModel);
         }
 
-        [Route("profile/edit")]
+        [Route("editprofile")]
         [HttpPost]
         public ActionResult Edit([Bind(Exclude = "")] EditProfileBm model)
         {
@@ -191,6 +192,16 @@ namespace CameraBazaar.App.Controllers
             var viewModel = this.service.GetEditProfileVm(user);
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        [ChildActionOnly]
+        public ActionResult LastLogin()
+        {
+            var sessionId = this.Request.Cookies.Get("sessionId")?.Value;
+            var user = AuthenticationManager.GetUser(sessionId);
+
+            return this.PartialView("_LastLogin", user.LastLoginTime);
         }
     }
 }

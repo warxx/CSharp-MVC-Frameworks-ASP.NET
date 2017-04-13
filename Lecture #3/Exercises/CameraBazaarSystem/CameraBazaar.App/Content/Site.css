@@ -23,5 +23,13 @@ textarea {
     max-width: 500px;
 }*/
 
+.black .active a,
+.black .active a:hover {
+    background-color: black;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: black;
+}
 
 
